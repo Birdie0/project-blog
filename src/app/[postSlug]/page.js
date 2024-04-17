@@ -1,4 +1,5 @@
 import React from 'react';
+import dynamic from 'next/dynamic'
 
 import BlogHero from '@/components/BlogHero';
 
@@ -6,10 +7,13 @@ import styles from './postSlug.module.css';
 import { loadBlogPost } from '@/helpers/file-helpers';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { BLOG_TITLE } from '@/constants';
-import CodeSnippet from '@/components/CodeSnippet';
+
+const CodeSnippet = dynamic(() => import('@/components/CodeSnippet'))
+const DivisionGroupsDemo = dynamic(() => import('@/components/DivisionGroupsDemo'))
 
 const components = {
   pre: CodeSnippet,
+  DivisionGroupsDemo,
 }
 
 export async function getData(postSlug) {
