@@ -10,10 +10,12 @@ import { BLOG_TITLE } from '@/constants';
 
 const CodeSnippet = dynamic(() => import('@/components/CodeSnippet'))
 const DivisionGroupsDemo = dynamic(() => import('@/components/DivisionGroupsDemo'))
+const CircularColorsDemo = dynamic(() => import('@/components/CircularColorsDemo'));
 
 const components = {
   pre: CodeSnippet,
   DivisionGroupsDemo,
+  CircularColorsDemo,
 }
 
 export async function getData(postSlug) {
